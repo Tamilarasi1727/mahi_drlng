@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Uyiree😘❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#ffdde1,#ee9ca7);
+    color:#333;
+    overflow-x:hidden;
+}
+
+section{
+    min-height:100vh;
+    padding:50px 10%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.hero{
+    text-align:center;
+}
+
+.hero h1{
+    font-size:4rem;
+    font-family:'Dancing Script',cursive;
+    color:white;
+}
+
+/* HEART IMAGE */
+.heart-image{
+    width:350px;
+    height:350px;
+    margin:30px auto 0 auto; /* centers it */
+    filter:drop-shadow(0 10px 25px rgba(0,0,0,.3));
+}
+
+.heart-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    clip-path:path("M175 315 C35 220 0 120 0 70 C0 20 40 0 80 0 C130 0 175 45 175 45 C175 45 220 0 270 0 C310 0 350 20 350 70 C350 120 315 220 175 315 Z");
+}
+.title{
+    font-size:3rem;
+    margin-bottom:30px;
+    color:white;
+    font-family:'Dancing Script',cursive;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    width:100%;
+}
+
+.gallery img{
+    width:100%;
+    height:450px;
+    object-fit:cover;
+    border-radius:20px;
+    transition:.4s;
+    box-shadow:0 8px 20px rgba(0,0,0,.2);
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+.letter{
+    max-width:800px;
+    background:white;
+    padding:40px;
+    border-radius:25px;
+    line-height:1.8;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.video video{
+    width:90vw;
+    max-width:790px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+.music iframe{
+    width:90%;
+    max-width:700px;
+    height:380px;
+    border-radius:20px;
+}
+
+.surprise-btn{
+    padding:15px 35px;
+    border:none;
+    border-radius:50px;
+    background:white;
+    color:#ff4f81;
+    font-size:1.1rem;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.hidden-message{
+    display:none;
+    margin-top:30px;
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    text-align:center;
+    max-width:700px;
+}
+
+.hearts{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+}
+
+.heart{
+    position:absolute;
+    color:white;
+    animation:float 6s linear infinite;
+}
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:20px;
+
+    max-width:1100px;
+    margin:0 auto;  /* center */
+    justify-items:center;
+}
+
+/* Photo Card */
+.photo-card{
+    width:280px;
+    height:450px;
+    perspective:1000px;
+    cursor:pointer;
+    transition:transform 0.3s, box-shadow 0.3s;
+}
+
+/* Hover Glow Effect */
+.photo-card:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 25px rgba(255, 105, 180, 0.8),
+               0 0 50px rgba(255, 106, 106, 0.5);
+    border-radius:2px;
+}
+
+/* Flip container */
+.photo-inner{
+    position:relative;
+    width:100%;
+    height:100%;
+    transition:transform 0.8s;
+    transform-style:preserve-3d;
+}
+
+.photo-card.flipped .photo-inner{
+    transform:rotateY(180deg);
+}
+
+/* Front & Back */
+.photo-front,
+.photo-back{
+    position:absolute;
+    width:100%;
+    height:100%;
+    backface-visibility:hidden;
+}
+
+.photo-front img,
+.photo-back img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:20px;
+}
+
+/* Back side rotation */
+.photo-back{
+    transform:rotateY(180deg);
+}
+
+.memo{
+    font-size:2rem;
+    margin-bottom:30px;
+    margin-left: 600px;
+    color:white;
+    font-family:'Dancing Script',cursive;
+}
+
+.envelope-container{
+    position:relative;
+    width:400px;
+    margin:auto;
+    cursor:pointer;
+}
+
+.envelope{
+    width:250px;
+    height:180px;
+    background:#ff4382;
+    margin:auto;
+    border-radius:10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:80px;
+    box-shadow:0 10px 25px rgba(0,0,0,.3);
+    transition:.5s;
+}
+
+.envelope:hover{
+    transform:scale(1.05);
+}
+
+.letter-paper{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%) translateY(0);
+    width:750px;
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+
+    opacity:0;
+    z-index:-1;
+    transition:all 1s ease;
+}
+
+.letter-paper.show{
+    transform:translateX(-50%) translateY(-180px);
+    opacity:1;
+    z-index:1;
+}
+
+.video-gallery{
+    display:none;
+
+    margin-top:30px;
+
+    justify-content:center;
+    flex-wrap:wrap;
+
+    gap:20px;
+}
+
+.video-gallery video{
+
+    width:210px;
+    height:370px;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.3);
+
+    transition:.4s;
+}
+
+.video-gallery video:hover{
+
+    transform:scale(1.05);
+
+    box-shadow:
+    0 0 15px #fff,
+    0 0 30px #ff4f81;
+}
+
+.surprise-btn{
+    display:block;
+    margin:30px auto;
+
+    padding:15px 35px;
+    border:none;
+    border-radius:50px;
+
+    background:white;
+    color:#ff4f81;
+
+    font-size:1.1rem;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.surprise-btn:hover{
+    transform:scale(1.05);
+
+    box-shadow:
+    0 0 15px #fff,
+    0 0 30px #ff4f81;
+}
+
+/* SAME BACKGROUND EVERYWHERE */
+section{
+    background:transparent;
+}
+
+/* ONE LAST SURPRISE TITLE */
+.last-surprise-title{
+    text-align:center;
+    font-size:3rem;
+    color:white;
+    font-family:'Dancing Script',cursive;
+    margin-bottom:20px;
+    width:100%;
+}
+
+/* CENTER THE WHOLE SECTION */
+.video-section{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+/* Responsive */
+@media (max-width:1000px){
+    .gallery{
+        grid-template-columns:repeat(2, 1fr);
+    }
+}
+
+@media (max-width:600px){
+    .gallery{
+        grid-template-columns:repeat(1, 1fr);
+    }
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(100vh);
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-100px);
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="hearts"></div>
+
+<!-- HERO -->
+<section class="hero">
+     
+    <h1>Happy Birthday Uyiree❤️‍🩹🫂</h1>
+
+    <div class="heart-image">
+        <img src="fdb1570d-c7df-49ca-975a-3f6e975aae57.jpg" alt="Birthday Photo">
+    </div>
+    
+</section>
+
+<!-- MEMORIES -->
+ <div class="memo">
+<h1>Our Memories📸</h1></div>
+<div class="gallery">
+
+   <div class="photo-card" onclick="flipAndPlay(this)">
+        <div class="photo-inner">
+            <div class="photo-front">
+                <img src="cover.png">
+            </div>
+            <div class="photo-back">
+                <img src="image 1.jpg">
+            </div>
+        </div>
+        <audio class="photo-audio"><source src="s1.mp3" type="audio/mpeg"></audio>
+    </div>
+
+
+   <div class="photo-card" onclick="flipAndPlay(this)">
+        <div class="photo-inner">
+            <div class="photo-front">
+                <img src="cover.png">
+            </div>
+            <div class="photo-back">
+                <img src="image 2.jpg">
+            </div>
+        </div>
+        <audio class="photo-audio"><source src="s2.mp3" type="audio/mp3"></audio>
+    </div>
+
+    <div class="photo-card" onclick="flipAndPlay(this)">
+        <div class="photo-inner">
+            <div class="photo-front">
+                <img src="cover.png">
+            </div>
+            <div class="photo-back">
+                <img src="image 3.jpg">
+            </div>
+        </div>
+        <audio class="photo-audio"><source src="s3.mp3"type="audio/mp3"></audio>
+    </div>
+
+
+    <div class="photo-card" onclick="flipAndPlay(this)">
+        <div class="photo-inner">
+            <div class="photo-front">
+                <img src="cover.png">
+            </div>
+            <div class="photo-back">
+                <img src="image 4.jpg">
+            </div>
+        </div>
+        <audio class="photo-audio"><source src="s4.mp3"type="audio/mp3"></audio>
+    </div>
+
+
+    <div class="photo-card" onclick="flipAndPlay(this)">
+        <div class="photo-inner">
+            <div class="photo-front">
+                <img src="cover.png">
+            </div>
+            <div class="photo-back">
+                <img src="image 5.jpg">
+            </div>
+        </div>
+        <audio class="photo-audio"><source src="s5.mp3"type="audio/mp3"></audio>
+    </div>
+
+
+    <div class="photo-card" onclick="flipAndPlay(this)">
+        <div class="photo-inner">
+            <div class="photo-front">
+                <img src="cover.png">
+            </div>
+            <div class="photo-back">
+                <img src="image 6.jpg">
+            </div>
+        </div>
+        <audio class="photo-audio"><source src="s6.mp3"type="audio/mp3"></audio>
+    </div>
+
+
+    <div class="photo-card" onclick="flipAndPlay(this)">
+        <div class="photo-inner">
+            <div class="photo-front">
+                <img src="cover.png">
+            </div>
+            <div class="photo-back">
+                <img src="image 7.jpg">
+            </div>
+        </div>
+        <audio class="photo-audio"><source src="s7.mp3" type="audio/mp3"></audio>
+    </div>
+
+
+    <div class="photo-card" onclick="flipAndPlay(this)">
+        <div class="photo-inner">
+            <div class="photo-front">
+                <img src="cover.png">
+            </div>
+            <div class="photo-back">
+                <img src="image 8.jpg">
+            </div>
+        </div>
+        <audio class="photo-audio"><source src="s8.mp3"type="audio/mp3"></audio>
+    </div>
+
+
+    <div class="photo-card" onclick="flipAndPlay(this)">
+        <div class="photo-inner">
+            <div class="photo-front">
+                <img src="cover.png">
+            </div>
+            <div class="photo-back">
+                <img src="image 9.jpg">
+            </div>
+        </div>
+        <audio class="photo-audio"><source src="s9.mp3"type="audio/mp3"></audio>
+    </div>
+
+
+    <div class="photo-card" onclick="flipAndPlay(this)">
+        <div class="photo-inner">
+            <div class="photo-front">
+                <img src="cover.png">
+            </div>
+            <div class="photo-back">
+                <img src="image 10.jpg">
+            </div>
+        </div>
+        <audio class="photo-audio"><source src="s10.mp3" type="audio/mp3"></audio>
+    </div>
+
+
+    <div class="photo-card" onclick="flipAndPlay(this)">
+        <div class="photo-inner">
+            <div class="photo-front">
+                <img src="cover.png">
+            </div>
+            <div class="photo-back">
+                <img src="image 11.jpg">
+            </div>
+        </div>
+        <audio class="photo-audio"><source src="s11.mp3"type="audio/mp3"></audio>
+    </div>
+
+
+    <div class="photo-card" onclick="flipAndPlay(this)">
+        <div class="photo-inner">
+            <div class="photo-front">
+                <img src="cover.png">
+            </div>
+            <div class="photo-back">
+                <img src="image 12.jpg">
+            </div>
+        </div>
+        <audio class="photo-audio"><source src="s12.mp3"type="audio/mp3"></audio>
+    </div>
+
+</div>
+<!-- VIDEO -->
+<section class="video">
+    <h2 class="title">Special Video 🎥</h2>
+
+    <video controls autoplay loop>
+        <source src="video.mp4" type="video/mp4">
+    </video>
+</section>
+
+
+
+<section>
+    <h2 class="title">A Letter For You 💌</h2>
+
+    <div class="envelope-container" onclick="openLetter()">
+
+        <div class="envelope">
+            💌
+        </div>
+
+        <div class="letter-paper" id="letterPaper">
+            <p>
+                To My Drlng ❤️<br><br>
+
+                Happy Birthday uyiree😚❤️‍🩹 mothala sry😅 ena intha birthday aprm pona birthday apo naa eppayum wish pandra mathiri pannala😂 so nee enmela semma kandula Iruka nu theriyum Athuku silla reasons Iruku but reasons um solla kudathu ithula ena thapu en mela than enathan naa reasons sonnalum naa pannama irunthuta athuku manichiko sry nu sollala athuku pathila luv u drlng😚🫶🫂 nee eppayum spcl than d pesunathan nu illa but kuda iruka vendiya tym la illama poirukalam ena nee ethayume share pandrathu illa perusa ipo ellam madam maranthutinga namala😒😒 ana naa ellam marakala pa call than panna mata msg panna mata ana una pathi ellam yosichitu than irupa so rombha kavala padatha naa maranthuta nu🫂 aprm ipo nadantha neraiya incidents ellathulayum ungala than miss panna unga kuda ellam irukanum schl ku poganum la thonuchu inga una mathiri than oru iruntha nu solliruken niyabagam iruka nu theriyala sibi nu una mathiriye torture pannite irupa en usura vangite irupa ana kadasila avala la than motha prechana ena nalla vechu game play pannirukanga ana en uyiru apdi la illa athu enathan ena torture pannalum enaku ipdi ellam pannathu apo ellam semmaiya miss panna nee nerla iruntha nalla irukum la thonuchu unkita perusa naa ethuvum share pannathu illa ena nee neraiya solluviya apo enakum solla thonathu ana intha tym unkita neraiya sollanum naa ena feel pandra epdi irukanu ana mudiyala but eppayume unga place ellam yaralayum replace la pannave mudiyathu enathan clg frnds irunthalum schl schl than apo iruntha mahi tamil eh vera than ana ipo palaya mahi illa konjam maritanga naanum mariten than but antha mahi konjam velaiyatu thanama pesurathu nadanthukurathu athu ellam enkita konjam koranchatha naa feel panna ipo ellam video call kuda madam pandrathu illa ena pandrathu madam avalo bc😒😒 ana eppayume enaku intha naaya pudikum athu than thapa nenachitu Iruku naa ellathayum maranthutanu apdi ethuvume illa eppayum unkuda than irupa😚🫂 nambha bond apdiye till kadasi vara kandipa continue aagum uyire❤️🫂 so rombha la worry pannatha eppayum mahi ma than enoda uyiree😚😚😚😚❤️❤️🫂🫂🫂😁😁 so avalo easy la una vitra maten seriya eppayum sirichite iru antha sirichite iruka mahi than Venum antha naayi than Venum summa ellathayum yosichitu thana mathikira mahi theva illa so suji ah pathi rombha yosikatha nee athula konjam free ah vidu thana seriyakum seriya🫂 aprm ena avalothan madam eppayume hpy ah sirichite irukanum athan🫂❤️‍🩹 Luv u uyiree😚💟 enoda uyirvangi ah konjam back to form ku kuda varalam😅🫂 naa atha light ah miss pandra ma a neraiya miss panniruken una but sonnathu illa avlothan🫂 seri adutha birthday la irunthu naa eppayum wish pandrathu mathiri kandipa continue pannuva eppayum una spcl ah feel panna vekuren seriya😚😁 luv u drlng😚🫂❤️ Once again happy Birthday chloo😚💞
+            </p>
+        </div>
+
+    </div>
+<section class="video-section">
+
+    <h2 class="last-surprise-title">
+        One Last Surprise ✨
+    </h2>
+
+<button class="surprise-btn" onclick="showVideos()">
+    Click Here 🎁
+</button>
+
+<div class="video-gallery" id="videoGallery">
+
+    <video controls>
+        <source src="v1.mp4"type="video/mp4">
+    </video>
+
+    <video controls>
+        <source src="v2.mp4" type="video/mp4">
+    </video>
+
+    <video controls>
+        <source src="v3.mp4"type="video/mp4">
+    </video>
+
+    <video controls>
+        <source src="v4.mp4"type="video/mp4">
+    </video>
+
+    <video controls>
+        <source src="v5.mp4"type="video/mp4">
+    </video>
+
+    <video controls>
+        <source src="v6.mp4"type="video/mp4">
+    </video>
+
+    
+    <video controls>
+        <source src="v7.mp4"type="video/mp4">
+    </video>
+
+      <video controls>
+        <source src="v8.mp4"type="video/mp4">
+    </video>
+
+      <video controls>
+        <source src="v9.mp4"type="video/mp4">
+    </video>
+
+      <video controls>
+        <source src="v10.mp4"type="video/mp4">
+    </video>
+
+      <video controls>
+        <source src="v11.mp4"type="video/mp4">
+    </video>
+
+      <video controls>
+        <source src="v12.mp4"type="video/mp4">
+    </video>
+
+      <video controls>
+        <source src="v13.mp4"type="video/mp4">
+    </video>
+
+      <video controls>
+        <source src="v14.mp4"type="video/mp4">
+    </video>
+
+      <video controls>
+        <source src="v15.mp4"type="video/mp4">
+    </video>
+
+      <video controls>
+        <source src="v16.mp4"type="video/mp4">
+    </video>
+
+      <video controls>
+        <source src="v17.mp4"type="video/mp4">
+    </video>
+
+      <video controls>
+        <source src="v18.mp4"type="video/mp4">
+    </video>
+
+      <video controls>
+        <source src="v19.mp4"type="video/mp4">
+    </video>
+
+    <video controls>
+        <source src="v20.mp4"type="video/mp4">
+    </video>
+
+     <video controls>
+        <source src="v22.mp4"type="video/mp4">
+    </video>
+
+    <video controls>
+        <source src="v23.mp4"type="video/mp4">
+    </video>
+
+      <video controls>
+        <source src="Tamil.mp4"type="video/mp4">
+    </video>
+
+
+
+</div>
+
+<script>
+const hearts=document.querySelector(".hearts");
+
+setInterval(()=>{
+    const heart=document.createElement("div");
+
+    heart.classList.add("heart");
+    heart.innerHTML="❤️";
+
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.fontSize=Math.random()*20+15+"px";
+
+    hearts.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },6000);
+
+},300);
+function showMessage(){
+    document.getElementById("surprise").style.display="block";
+}
+
+function flipAndPlay(card) {
+
+    // Flip the card
+    card.classList.toggle('flipped');
+
+    // Get the audio inside this card
+    const audio = card.querySelector('.photo-audio');
+
+    // If card is flipped, play audio
+    if (card.classList.contains('flipped')) {
+        audio.currentTime = 0;
+        audio.play();
+    } else {
+        audio.pause();
+        audio.currentTime = 0;
+    }
+}
+
+function openLetter(){
+    document
+        .getElementById("letterPaper")
+        .classList.toggle("show");
+}
+
+function showVideos(){
+
+    document.getElementById("videoGallery")
+            .style.display="flex";
+}
+</script>
+
+</body>
+</html>
